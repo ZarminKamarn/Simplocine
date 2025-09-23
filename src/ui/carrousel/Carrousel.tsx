@@ -4,9 +4,11 @@ import "./carrousel.css";
 
 interface CarrouselProps {
   apiLink: string;
+  page: "movies" | "series";
 }
 
-export function Carrousel({ apiLink }: CarrouselProps) {
+export function Carrousel({ apiLink, page }: CarrouselProps) {
+  useEffect(() => {});
   const data = [
     "Titre 1",
     "Titre 2",
@@ -30,7 +32,7 @@ export function Carrousel({ apiLink }: CarrouselProps) {
           <li className="carousel-item">
             <Card
               imageSrc="https://placehold.co/600x400"
-              link={`movies/${index}`}
+              link={`/${page}/${index}`}
               title={item}
             />
           </li>
