@@ -1,0 +1,10 @@
+.banner-section {
+  width: 100%;
+  height: fit-content;
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 50%;
+}

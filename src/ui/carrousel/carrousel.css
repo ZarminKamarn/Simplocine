@@ -5,3 +5,8 @@
   gap: 16px;
   overflow-x: scroll;
 }
+
+.carousel-item {
+  width: 200px;
+  height: 380px;
+}

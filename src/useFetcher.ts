@@ -14,7 +14,7 @@ export function useFetcher<T>(url: string): useFetcherObject<T> {
   const [errorMsg, setErrorMsg] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    async function fetcher<T>() {
+    async function fetcher() {
       const options = {
         method: "GET",
         headers: {

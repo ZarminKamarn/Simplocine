@@ -1,28 +1,37 @@
-import { Carrousel } from "../../carrousel/Carrousel";
+import type { ListMovies } from "../../../tmpTypes";
+import { useFetcher } from "../../../useFetcher";
+import { MovieCarrouselSection } from "../../carrouselSection/MovieCarrouselSection";
 
 export function MovieListPage() {
+  const movies1 = useFetcher<ListMovies>(
+    "https://api.themoviedb.org/3/discover/movie?language=fr-FR&page=1&with_genres=28"
+  );
+  const movies2 = useFetcher<ListMovies>(
+    "https://api.themoviedb.org/3/discover/movie?language=fr-FR&page=1&with_genres=27"
+  );
+  const movies3 = useFetcher<ListMovies>(
+    "https://api.themoviedb.org/3/discover/movie?language=fr-FR&page=1&with_genres=14"
+  );
+  const movies4 = useFetcher<ListMovies>(
+    "https://api.themoviedb.org/3/discover/movie?language=fr-FR&page=1&with_genres=10752"
+  );
+  const movies5 = useFetcher<ListMovies>(
+    "https://api.themoviedb.org/3/discover/movie?&language=fr-FR&page=1&with_genres=99"
+  );
+
   return (
     <>
-      <section>
-        <h2>Les films d'action</h2>
-        <Carrousel page="movies" />
-      </section>
-      <section>
-        <h2>Les films romantiques</h2>
-        <Carrousel page="movies" />
-      </section>
-      <section>
-        <h2>Les films polars</h2>
-        <Carrousel page="movies" />
-      </section>
-      <section>
-        <h2>Les films historiques</h2>
-        <Carrousel page="movies" />
-      </section>
-      <section>
-        <h2>Les films fantasy</h2>
-        <Carrousel page="movies" />
-      </section>
+      <MovieCarrouselSection title="Les films d'action" data={movies1.data} />
+      <MovieCarrouselSection title="Les films d'horreur" data={movies2.data} />
+      <MovieCarrouselSection
+        title="Les films fantastiques"
+        data={movies3.data}
+      />
+      <MovieCarrouselSection title="Les films de guerre" data={movies4.data} />
+      <MovieCarrouselSection
+        title="Les films documentaires"
+        data={movies5.data}
+      />
     </>
   );
 }

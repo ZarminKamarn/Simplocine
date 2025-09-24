@@ -65,7 +65,7 @@ export interface ListSeries {
   total_results: number;
 }
 
-interface ListSerieSingleResult {
+export interface ListSerieSingleResult {
   adult: boolean;
   backdrop_path: string;
   genre_ids: Array<number>;
