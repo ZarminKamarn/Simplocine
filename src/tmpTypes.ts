@@ -1,11 +1,11 @@
-interface ListMovies {
+export interface ListMovies {
   page: string;
   results: Array<ListMoviesSingleResult>;
   total_pages: number;
   total_results: number;
 }
 
-interface ListMoviesSingleResult {
+export interface ListMoviesSingleResult {
   adult: boolean;
   backdrop_path: string;
   genre_ids: Array<number>;
@@ -22,7 +22,7 @@ interface ListMoviesSingleResult {
   vote_count: number;
 }
 
-interface MovieDetails {
+export interface MovieDetails {
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: Collection | null;
@@ -58,7 +58,7 @@ interface MovieDetails {
   vote_count: number;
 }
 
-interface ListSeries {
+export interface ListSeries {
   page: string;
   results: Array<ListSerieSingleResult>;
   total_pages: number;
@@ -82,7 +82,7 @@ interface ListSerieSingleResult {
   vote_count: number;
 }
 
-interface SerieDetails {
+export interface SerieDetails {
   adult: boolean;
   backdrop_path: string;
   created_by: Array<SerieCreator>;
@@ -165,7 +165,7 @@ interface Episode {
   season_number: number;
   show_id: number;
   still_path: string;
-} // TO BE POTENTIALLY RENAMED
+}
 
 interface Network {
   id: number;
@@ -185,7 +185,7 @@ interface Season {
   vote_average: number;
 }
 
-interface ListCasting {
+export interface ListCasting {
   cast: Array<ListCastingPerson>;
   id: string;
 }
@@ -204,7 +204,7 @@ interface ListCastingPerson {
   order: number;
 }
 
-interface PersonDetails {
+export interface PersonDetails {
   adult: boolean;
   also_known_as: Array<String>;
   biography: string;

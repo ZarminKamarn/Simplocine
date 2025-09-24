@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import { Card } from "../card/Card";
 import "./carrousel.css";
 
-interface CarrouselProps {
-  apiLink: string;
+interface CarrouselProps<T> {
   page: "movies" | "series";
+  data: Array<T>;
 }
 
-export function Carrousel({ apiLink, page }: CarrouselProps) {
+export function Carrousel<T>({ page }: CarrouselProps<T>) {
   useEffect(() => {});
   const data = [
     "Titre 1",
