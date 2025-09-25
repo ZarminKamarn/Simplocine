@@ -18,9 +18,16 @@ export function Homepage() {
     "https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1"
   );
 
+  function getRandomMovie(movies: ListMovies): ListMoviesSingleResult {
+    const length = movies.results.length;
+    const index = Math.floor(Math.random() * length);
+
+    return movies.results[index];
+  }
+
   return (
     <>
-      <Banner movie={} />
+      {onAirMovies.data && <Banner movie={getRandomMovie(onAirMovies.data)} />}
       <MovieCarrouselSection
         title="Les films populaires"
         data={trendMovies.data}

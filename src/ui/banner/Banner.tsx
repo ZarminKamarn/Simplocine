@@ -16,7 +16,7 @@ export function Banner({ movie }: BannerProps) {
       />
       <h2>{movie.title}</h2>
       <p>{movie.overview}</p>
-      <Link to={`/movies/${movie.id}`} />
+      <Link to={`/movies/${movie.id}`}>Voir</Link>
     </section>
   );
 }

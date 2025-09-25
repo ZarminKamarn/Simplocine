@@ -1,9 +1,13 @@
 import { useParams } from "react-router";
 import { useFetcher } from "../../../useFetcher";
 import type { ListMovies } from "../../../tmpTypes";
-import { MovieCarrousel } from "../../carrousel/MovieCarrousel";
+import { useState } from "react";
+import { MovieCarrouselSection } from "../../carrouselSection/MovieCarrouselSection";
 
 export function MoviePage() {
+  const [bottomDiv, setBottomDiv] = useState<
+    "overview" | "casting" | "recommendations"
+  >("recommendations");
   const params = useParams();
   const recommendedMovies = useFetcher<ListMovies>(
     `https://api.themoviedb.org/3/movie/${params.id}/recommendations?language=fr-FR&page=1`
@@ -11,12 +15,14 @@ export function MoviePage() {
 
   return (
     <>
-      <section>
-        <h2>Recommandations</h2>
-        {recommendedMovies.data && (
-          <MovieCarrousel data={recommendedMovies.data.results} />
-        )}
-      </section>
+      {bottomDiv === "overview"}
+      {bottomDiv === "casting"}
+      {bottomDiv === "recommendations" && (
+        <MovieCarrouselSection
+          title="Recommandations"
+          data={recommendedMovies.data}
+        />
+      )}
     </>
   );
 }
