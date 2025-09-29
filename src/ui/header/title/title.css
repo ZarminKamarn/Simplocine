@@ -1,15 +1,15 @@
-.title{
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
+.title {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
 }
 
-.title-logo{
-    max-width: 45px;
-    max-height: 45px;
+.title-logo {
+  max-width: 45px;
+  max-height: 45px;
 }
 
-.title-text{
-    color: white;
+.title-text {
+  color: rgb(211, 227, 228);
 }

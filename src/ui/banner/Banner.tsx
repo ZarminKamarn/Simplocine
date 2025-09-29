@@ -14,9 +14,13 @@ export function Banner({ movie }: BannerProps) {
         alt={`image de ${movie.title}`}
         className="banner-img"
       />
-      <h2>{movie.title}</h2>
-      <p>{movie.overview}</p>
-      <Link to={`/movies/${movie.id}`}>Voir</Link>
+      <div className="banner-info">
+        <h2>{movie.title}</h2>
+        <p>{movie.overview}</p>
+        <Link to={`/movies/${movie.id}`} className="banner-link">
+          Voir
+        </Link>
+      </div>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import type { SerieDetails } from "../../tmpTypes";
+import "./destailsSection.css";
 
 interface SeriesProps {
   series: SerieDetails;
@@ -10,12 +11,12 @@ export function Series({ series }: SeriesProps) {
       <img
         src={`https://image.tmdb.org/t/p/original/${series.backdrop_path}`}
         alt={`image de ${series.name}`}
-        className="banner-img"
+        className="details-img"
       />
       <h2>{series.name}</h2>
       <p>{series.overview}</p>
       <p>{series.number_of_seasons} saisons</p>
-      <p>Score {series.popularity}/100</p>
+      <p>Note: {series.vote_average}/10</p>
     </section>
   );
 }

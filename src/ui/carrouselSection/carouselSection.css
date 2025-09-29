@@ -1,0 +1,6 @@
+.carousel-section {
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

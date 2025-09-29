@@ -11,6 +11,7 @@ import { CastingSection } from "../../castingSection/CastingSection";
 import { Button } from "../../button/Button";
 import { MovieSection } from "../../detailSection/MovieSection";
 import { MovieOverview } from "../../overview/MovieOverview";
+import "./detailsPage.css";
 
 export function MoviePage() {
   const [bottomDiv, setBottomDiv] = useState<
@@ -30,24 +31,27 @@ export function MoviePage() {
   return (
     <>
       {movie.data && <MovieSection movie={movie.data} />}
-      <div>
+      <div className="btn-div">
         <Button
           name="Informations"
           onClick={() => {
             setBottomDiv("overview");
           }}
+          className="inner-link-details-btn"
         />
         <Button
           name="Casting"
           onClick={() => {
             setBottomDiv("casting");
           }}
+          className="inner-link-details-btn"
         />
         <Button
           name="Recommandations"
           onClick={() => {
             setBottomDiv("recommendations");
           }}
+          className="inner-link-details-btn"
         />
       </div>
       {bottomDiv === "overview" && movie.data && (

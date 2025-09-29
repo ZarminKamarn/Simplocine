@@ -1,5 +1,6 @@
 import type { ListSeries } from "../../tmpTypes";
 import { SerieCarrousel } from "../carrousel/SerieCarrousel";
+import "./carouselSection.css";
 
 interface SerieCarrouselSectionProps {
   title: string;
@@ -11,9 +12,9 @@ export function SerieCarrouselSection({
   data,
 }: SerieCarrouselSectionProps) {
   return (
-    <section>
+    <section className="carousel-section">
       <h2>{title}</h2>
-      {data && <SerieCarrousel data={data.results} />}
+      {data && data.results && <SerieCarrousel data={data.results} />}
     </section>
   );
 }

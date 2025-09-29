@@ -1,10 +1,14 @@
-.navbar{
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
 
-.navbar-link{
-    color: white;
-    font-size: 20px;
+.navbar-link {
+  color: rgb(211, 227, 228);
+  font-size: 20px;
+}
+
+.navbar-link:hover {
+  color: rgb(255, 127, 127);
 }

@@ -8,6 +8,7 @@ import { SeasonSection } from "../../seasonSection/SeasonSection";
 import { Series } from "../../detailSection/SeriesSection";
 import { CastingSection } from "../../castingSection/CastingSection";
 import { SerieOverview } from "../../overview/SerieOverview";
+import "./detailsPage.css";
 
 export function SeriePage() {
   const params = useParams();
@@ -27,30 +28,34 @@ export function SeriePage() {
   return (
     <>
       {series.data && <Series series={series.data} />}
-      <div>
+      <div className="btn-div">
         <Button
           name="Informations"
           onClick={() => {
             setBottomDiv("overview");
           }}
+          className="inner-link-details-btn"
         />
         <Button
           name="Saisons"
           onClick={() => {
             setBottomDiv("seasons");
           }}
+          className="inner-link-details-btn"
         />
         <Button
           name="Casting"
           onClick={() => {
             setBottomDiv("casting");
           }}
+          className="inner-link-details-btn"
         />
         <Button
           name="Recommandations"
           onClick={() => {
             setBottomDiv("recommendations");
           }}
+          className="inner-link-details-btn"
         />
       </div>
       {bottomDiv === "overview" && series.data && (

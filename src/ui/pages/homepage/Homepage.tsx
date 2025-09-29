@@ -2,6 +2,7 @@ import type { ListMovies, ListMoviesSingleResult } from "../../../tmpTypes";
 import { useFetcher } from "../../../useFetcher";
 import { Banner } from "../../banner/Banner";
 import { MovieCarrouselSection } from "../../carrouselSection/MovieCarrouselSection";
+import "./homepage.css";
 
 export function Homepage() {
   const onAirMovies = useFetcher<ListMovies>(
@@ -26,7 +27,7 @@ export function Homepage() {
   }
 
   return (
-    <>
+    <div className="main">
       {onAirMovies.data && <Banner movie={getRandomMovie(onAirMovies.data)} />}
       <MovieCarrouselSection
         title="Les films populaires"
@@ -40,6 +41,6 @@ export function Homepage() {
         title="Les films à venir"
         data={upcomingMovies.data}
       />
-    </>
+    </div>
   );
 }

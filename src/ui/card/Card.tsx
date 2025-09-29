@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import "./card.css";
 
 interface CardProps {
   imageSrc: string;
@@ -8,8 +9,8 @@ interface CardProps {
 
 export function Card({ imageSrc, title, link }: CardProps) {
   return (
-    <Link to={link}>
-      <img src={imageSrc} alt={title} />
+    <Link to={link} className="card">
+      <img src={imageSrc} alt={title} className="card-img" />
       <p>{title}</p>
     </Link>
   );

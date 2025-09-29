@@ -3,8 +3,36 @@
   height: fit-content;
   max-height: 700px;
   overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+}
+
+.banner-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 320px;
 }
 
 .banner-img {
-  width: 50%;
+  width: 100%;
+  max-width: 1000px;
+  filter: brightness(50%) saturate(150%);
+}
+
+.banner-link {
+  background-color: rgb(53, 54, 46);
+  color: rgb(238, 254, 255);
+  width: fit-content;
+  padding: 4px 8px;
+  border: 2px solid rgb(238, 254, 255);
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.banner-link:hover {
+  border-color: rgb(255, 127, 127);
+  color: rgb(255, 127, 127);
 }
