@@ -1,3 +1,3 @@
 export function PersonPage() {
-  return <></>;
+  return <h2>Person</h2>;
 }

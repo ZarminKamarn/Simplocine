@@ -15,6 +15,7 @@ export function Series({ series }: SeriesProps) {
       <h2>{series.name}</h2>
       <p>{series.overview}</p>
       <p>{series.number_of_seasons} saisons</p>
+      <p>Score {series.popularity}/100</p>
     </section>
   );
 }

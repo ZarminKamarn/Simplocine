@@ -98,6 +98,7 @@ export interface SerieDetails {
   name: string;
   next_episode_to_air: Episode | null;
   networks: Array<Network>;
+  number_of_episodes: number;
   number_of_seasons: number;
   origin_country: Array<string>;
   original_language: string;
@@ -190,7 +191,7 @@ export interface ListCasting {
   id: string;
 }
 
-interface ListCastingPerson {
+export interface ListCastingPerson {
   adult: boolean;
   gender: number;
   id: number;

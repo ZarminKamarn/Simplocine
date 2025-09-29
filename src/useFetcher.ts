@@ -39,7 +39,7 @@ export function useFetcher<T>(url: string): useFetcherObject<T> {
     }
 
     fetcher();
-  }, []);
+  }, [url]);
 
   return { data, isLoading, isError, errorMsg };
 }

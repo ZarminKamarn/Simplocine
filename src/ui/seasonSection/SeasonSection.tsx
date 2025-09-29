@@ -1,4 +1,5 @@
 import type { Season } from "../../tmpTypes";
+import { SeasonContent } from "./Season";
 
 interface SeasonSectionProps {
   seasons: Array<Season>;
@@ -7,21 +8,15 @@ interface SeasonSectionProps {
 export function SeasonSection({ seasons }: SeasonSectionProps) {
   return (
     <section>
-      {seasons.map((season) => {
-        return (
-          <div>
-            <img
-              src={`https://image.tmdb.org/t/p/w200/${season.poster_path}`}
-              alt={`Affiche saison ${season.season_number}`}
-            />
-            <div>
-              <h3>{season.name}</h3>
-              <p>{season.overview}</p>
-              <p>{season.episode_count} épisodes</p>
-            </div>
-          </div>
-        );
-      })}
+      <ul>
+        {seasons.map((season) => {
+          return (
+            <li>
+              <SeasonContent season={season} />
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 }

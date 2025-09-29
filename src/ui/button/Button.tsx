@@ -1,4 +1,4 @@
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   name: string;
   type?: "button" | "submit" | "reset" | undefined;
 }
