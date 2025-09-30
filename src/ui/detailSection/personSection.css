@@ -1,0 +1,25 @@
+.person-section {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+}
+
+.person-title {
+  font-size: 30px;
+}
+
+.person-description {
+  line-height: 24px;
+  letter-spacing: 1px;
+}
+
+.person-img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
