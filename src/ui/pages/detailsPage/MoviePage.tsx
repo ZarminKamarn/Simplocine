@@ -38,21 +38,27 @@ export function MoviePage() {
             onClick={() => {
               setBottomDiv("overview");
             }}
-            className="inner-link-details-btn"
+            className={`inner-link-details-btn ${
+              bottomDiv === "overview" && "selected-btn"
+            }`}
           />
           <Button
             name="Casting"
             onClick={() => {
               setBottomDiv("casting");
             }}
-            className="inner-link-details-btn"
+            className={`inner-link-details-btn ${
+              bottomDiv === "casting" && "selected-btn"
+            }`}
           />
           <Button
             name="Recommandations"
             onClick={() => {
               setBottomDiv("recommendations");
             }}
-            className="inner-link-details-btn"
+            className={`inner-link-details-btn ${
+              bottomDiv === "recommendations" && "selected-btn"
+            }`}
           />
         </div>
 

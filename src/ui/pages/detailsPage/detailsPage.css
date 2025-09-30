@@ -25,3 +25,7 @@
   flex-direction: column;
   gap: 60px;
 }
+
+.selected-btn {
+  border-bottom: 3px solid rgb(238, 254, 255);
+}
