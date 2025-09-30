@@ -1,6 +1,7 @@
 import type { ListSeries } from "../../../tmpTypes";
 import { useFetcher } from "../../../useFetcher";
 import { SerieCarrouselSection } from "../../carrouselSection/SerieCarrouselSection";
+import "./listPage.css";
 
 export function SerieListPage() {
   const series1 = useFetcher<ListSeries>(
@@ -20,7 +21,7 @@ export function SerieListPage() {
   );
 
   return (
-    <>
+    <div className="list-page-main">
       <SerieCarrouselSection
         title="Les séries d'action et d'aventure"
         data={series1.data}
@@ -41,6 +42,6 @@ export function SerieListPage() {
         title="Les séries policières"
         data={series5.data}
       />
-    </>
+    </div>
   );
 }

@@ -29,7 +29,7 @@ export function MoviePage() {
   );
 
   return (
-    <div className="main">
+    <div className="details-page-main">
       {movie.data && <MovieSection movie={movie.data} />}
       <div>
         <div className="btn-div">

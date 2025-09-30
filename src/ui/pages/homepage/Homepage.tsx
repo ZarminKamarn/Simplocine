@@ -27,7 +27,7 @@ export function Homepage() {
   }
 
   return (
-    <div className="main">
+    <div className="homepage-main">
       {onAirMovies.data && <Banner movie={getRandomMovie(onAirMovies.data)} />}
       <MovieCarrouselSection
         title="Les films populaires"

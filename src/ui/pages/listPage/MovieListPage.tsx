@@ -1,6 +1,7 @@
 import type { ListMovies } from "../../../tmpTypes";
 import { useFetcher } from "../../../useFetcher";
 import { MovieCarrouselSection } from "../../carrouselSection/MovieCarrouselSection";
+import "./listPage.css";
 
 export function MovieListPage() {
   const movies1 = useFetcher<ListMovies>(
@@ -20,7 +21,7 @@ export function MovieListPage() {
   );
 
   return (
-    <>
+    <div className="list-page-main">
       <MovieCarrouselSection title="Les films d'action" data={movies1.data} />
       <MovieCarrouselSection title="Les films d'horreur" data={movies2.data} />
       <MovieCarrouselSection
@@ -32,6 +33,6 @@ export function MovieListPage() {
         title="Les films documentaires"
         data={movies5.data}
       />
-    </>
+    </div>
   );
 }

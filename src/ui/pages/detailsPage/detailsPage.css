@@ -19,3 +19,9 @@
 .inner-link-details-btn:hover {
   border-bottom: 3px solid rgb(238, 254, 255);
 }
+
+.details-page-main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}

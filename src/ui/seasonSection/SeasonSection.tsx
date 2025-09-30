@@ -1,5 +1,6 @@
 import type { Season } from "../../tmpTypes";
 import { SeasonContent } from "./Season";
+import "./season.css";
 
 interface SeasonSectionProps {
   seasons: Array<Season>;
@@ -7,11 +8,11 @@ interface SeasonSectionProps {
 
 export function SeasonSection({ seasons }: SeasonSectionProps) {
   return (
-    <section>
-      <ul>
+    <section className="season-section">
+      <ul className="season-list">
         {seasons.map((season) => {
           return (
-            <li>
+            <li className="season-item">
               <SeasonContent season={season} />
             </li>
           );
