@@ -15,8 +15,8 @@ export function Banner({ movie }: BannerProps) {
         className="banner-img"
       />
       <div className="banner-info">
-        <h2>{movie.title}</h2>
-        <p>{movie.overview}</p>
+        <h2 className="banner-title">{movie.title}</h2>
+        <p className="banner-description">{movie.overview}</p>
         <Link to={`/movies/${movie.id}`} className="banner-link">
           Voir
         </Link>

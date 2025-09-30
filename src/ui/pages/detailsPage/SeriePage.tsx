@@ -26,53 +26,52 @@ export function SeriePage() {
   );
 
   return (
-    <>
+    <div className="main">
       {series.data && <Series series={series.data} />}
-      <div className="btn-div">
-        <Button
-          name="Informations"
-          onClick={() => {
-            setBottomDiv("overview");
-          }}
-          className="inner-link-details-btn"
-        />
-        <Button
-          name="Saisons"
-          onClick={() => {
-            setBottomDiv("seasons");
-          }}
-          className="inner-link-details-btn"
-        />
-        <Button
-          name="Casting"
-          onClick={() => {
-            setBottomDiv("casting");
-          }}
-          className="inner-link-details-btn"
-        />
-        <Button
-          name="Recommandations"
-          onClick={() => {
-            setBottomDiv("recommendations");
-          }}
-          className="inner-link-details-btn"
-        />
+      <div>
+        <div className="btn-div">
+          <Button
+            name="Informations"
+            onClick={() => {
+              setBottomDiv("overview");
+            }}
+            className="inner-link-details-btn"
+          />
+          <Button
+            name="Saisons"
+            onClick={() => {
+              setBottomDiv("seasons");
+            }}
+            className="inner-link-details-btn"
+          />
+          <Button
+            name="Casting"
+            onClick={() => {
+              setBottomDiv("casting");
+            }}
+            className="inner-link-details-btn"
+          />
+          <Button
+            name="Recommandations"
+            onClick={() => {
+              setBottomDiv("recommendations");
+            }}
+            className="inner-link-details-btn"
+          />
+        </div>
+        {bottomDiv === "overview" && series.data && (
+          <SerieOverview series={series.data} />
+        )}
+        {bottomDiv === "seasons" && series.data && (
+          <SeasonSection seasons={series.data.seasons} />
+        )}
+        {bottomDiv === "casting" && casting.data && (
+          <CastingSection casts={casting.data.cast} />
+        )}
+        {bottomDiv === "recommendations" && (
+          <SerieCarrouselSection data={recommendedSeries.data} />
+        )}
       </div>
-      {bottomDiv === "overview" && series.data && (
-        <SerieOverview series={series.data} />
-      )}
-      {bottomDiv === "seasons" && series.data && (
-        <SeasonSection seasons={series.data.seasons} />
-      )}
-      {bottomDiv === "casting" && casting.data && (
-        <CastingSection casts={casting.data.cast} />
-      )}
-      {bottomDiv === "recommendations" && (
-        <SerieCarrouselSection
-          title="Recommandations"
-          data={recommendedSeries.data}
-        />
-      )}
-    </>
+    </div>
   );
 }

@@ -7,6 +7,11 @@ interface SerieOverviewProps {
 export function SerieOverview({ series }: SerieOverviewProps) {
   return (
     <section>
+      <img
+        src={`https://image.tmdb.org/t/p/w200/${series.poster_path}`}
+        alt={`poster de ${series.name}`}
+      />
+      <div></div>
       <div>
         <p>Nom original: {series.original_name}</p>
         <p>

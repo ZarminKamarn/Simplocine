@@ -7,6 +7,10 @@ interface MovieOverviewProps {
 export function MovieOverview({ movie }: MovieOverviewProps) {
   return (
     <section>
+      <img
+        src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+        alt={`poster de ${movie.title}`}
+      />
       <div>
         <p>Nom original: {movie.original_title}</p>
         <p>

@@ -16,7 +16,7 @@ import "./detailsPage.css";
 export function MoviePage() {
   const [bottomDiv, setBottomDiv] = useState<
     "overview" | "casting" | "recommendations"
-  >("recommendations");
+  >("overview");
   const params = useParams();
   const movie = useFetcher<MovieDetails>(
     `https://api.themoviedb.org/3/movie/${params.id}?language=fr-FR`
@@ -29,43 +29,43 @@ export function MoviePage() {
   );
 
   return (
-    <>
+    <div className="main">
       {movie.data && <MovieSection movie={movie.data} />}
-      <div className="btn-div">
-        <Button
-          name="Informations"
-          onClick={() => {
-            setBottomDiv("overview");
-          }}
-          className="inner-link-details-btn"
-        />
-        <Button
-          name="Casting"
-          onClick={() => {
-            setBottomDiv("casting");
-          }}
-          className="inner-link-details-btn"
-        />
-        <Button
-          name="Recommandations"
-          onClick={() => {
-            setBottomDiv("recommendations");
-          }}
-          className="inner-link-details-btn"
-        />
+      <div>
+        <div className="btn-div">
+          <Button
+            name="Informations"
+            onClick={() => {
+              setBottomDiv("overview");
+            }}
+            className="inner-link-details-btn"
+          />
+          <Button
+            name="Casting"
+            onClick={() => {
+              setBottomDiv("casting");
+            }}
+            className="inner-link-details-btn"
+          />
+          <Button
+            name="Recommandations"
+            onClick={() => {
+              setBottomDiv("recommendations");
+            }}
+            className="inner-link-details-btn"
+          />
+        </div>
+
+        {bottomDiv === "overview" && movie.data && (
+          <MovieOverview movie={movie.data} />
+        )}
+        {bottomDiv === "casting" && casting.data && (
+          <CastingSection casts={casting.data.cast} />
+        )}
+        {bottomDiv === "recommendations" && (
+          <MovieCarrouselSection data={recommendedMovies.data} />
+        )}
       </div>
-      {bottomDiv === "overview" && movie.data && (
-        <MovieOverview movie={movie.data} />
-      )}
-      {bottomDiv === "casting" && casting.data && (
-        <CastingSection casts={casting.data.cast} />
-      )}
-      {bottomDiv === "recommendations" && (
-        <MovieCarrouselSection
-          title="Recommandations"
-          data={recommendedMovies.data}
-        />
-      )}
-    </>
+    </div>
   );
 }

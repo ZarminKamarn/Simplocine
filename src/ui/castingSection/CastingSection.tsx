@@ -7,11 +7,11 @@ interface CastingSectionProps {
 
 export function CastingSection({ casts }: CastingSectionProps) {
   return (
-    <section>
-      <ul>
+    <section className="casting-section">
+      <ul className="casting-list">
         {casts.map((cast) => {
           return (
-            <li>
+            <li className="casting-item">
               <Casting cast={cast} />
             </li>
           );

@@ -13,13 +13,13 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  max-width: 320px;
+  max-width: 500px;
 }
 
 .banner-img {
   width: 100%;
   max-width: 1000px;
-  filter: brightness(50%) saturate(150%);
+  filter: brightness(60%) saturate(150%);
 }
 
 .banner-link {
@@ -35,4 +35,13 @@
 .banner-link:hover {
   border-color: rgb(255, 127, 127);
   color: rgb(255, 127, 127);
+}
+
+.banner-title {
+  font-size: 30px;
+}
+
+.banner-description {
+  line-height: 24px;
+  letter-spacing: 1px;
 }

@@ -1,0 +1,33 @@
+.casting-link:hover {
+  color: rgb(255, 127, 127);
+}
+
+.casting-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+  width: 30%;
+  min-width: 300px;
+}
+
+.casting-img {
+  max-width: 120px;
+}
+
+.casting-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.casting-list::after {
+  content: "";
+  width: 30%;
+}
+
+.casting-section {
+  padding: 0px 20px;
+}
