@@ -1,8 +1,8 @@
-import type { ListCastingPerson } from "../../tmpTypes";
+import type { Person } from "../../tmpTypes";
 import { Casting } from "./Casting";
 
 interface CastingSectionProps {
-  casts: Array<ListCastingPerson>;
+  casts: Array<Person>;
 }
 
 export function CastingSection({ casts }: CastingSectionProps) {

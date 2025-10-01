@@ -1,9 +1,9 @@
 import { Card } from "../card/Card";
 import "./carrousel.css";
-import type { ListMoviesSingleResult } from "../../tmpTypes";
+import type { Movie } from "../../tmpTypes";
 
 interface MovieCarrouselProps {
-  data: Array<ListMoviesSingleResult>;
+  data: Array<Movie>;
 }
 
 export function MovieCarrousel({ data }: MovieCarrouselProps) {

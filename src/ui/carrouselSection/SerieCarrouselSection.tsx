@@ -1,11 +1,11 @@
-import type { ListSeries } from "../../tmpTypes";
+import type { ListElement, Series } from "../../tmpTypes";
 import { SerieCarrousel } from "../carrousel/SerieCarrousel";
 import { TitleH2 } from "../title/TitleH2";
 import "./carouselSection.css";
 
 interface SerieCarrouselSectionProps {
   title?: string;
-  data: ListSeries | undefined;
+  data: ListElement<Series> | undefined;
 }
 
 export function SerieCarrouselSection({

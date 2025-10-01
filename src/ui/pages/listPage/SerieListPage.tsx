@@ -1,22 +1,22 @@
-import type { ListSeries } from "../../../tmpTypes";
+import type { ListElement, Series } from "../../../tmpTypes";
 import { useFetcher } from "../../../useFetcher";
 import { SerieCarrouselSection } from "../../carrouselSection/SerieCarrouselSection";
 import "./listPage.css";
 
 export function SerieListPage() {
-  const series1 = useFetcher<ListSeries>(
+  const series1 = useFetcher<ListElement<Series>>(
     "https://api.themoviedb.org/3/discover/tv?language=fr-FR&page=1&with_genres=10759"
   );
-  const series2 = useFetcher<ListSeries>(
+  const series2 = useFetcher<ListElement<Series>>(
     "https://api.themoviedb.org/3/discover/tv?language=fr-FR&page=1&with_genres=35"
   );
-  const series3 = useFetcher<ListSeries>(
+  const series3 = useFetcher<ListElement<Series>>(
     "https://api.themoviedb.org/3/discover/tv?language=fr-FR&page=1&with_genres=16"
   );
-  const series4 = useFetcher<ListSeries>(
+  const series4 = useFetcher<ListElement<Series>>(
     "https://api.themoviedb.org/3/discover/tv?language=fr-FR&page=1&with_genres=10765"
   );
-  const series5 = useFetcher<ListSeries>(
+  const series5 = useFetcher<ListElement<Series>>(
     "https://api.themoviedb.org/3/discover/tv?language=fr-FR&page=1&with_genres=80"
   );
 

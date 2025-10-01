@@ -1,25 +1,25 @@
-import type { ListMovies, ListMoviesSingleResult } from "../../../tmpTypes";
+import type { ListElement, Movie } from "../../../tmpTypes";
 import { useFetcher } from "../../../useFetcher";
 import { Banner } from "../../banner/Banner";
 import { MovieCarrouselSection } from "../../carrouselSection/MovieCarrouselSection";
 import "./homepage.css";
 
 export function Homepage() {
-  const onAirMovies = useFetcher<ListMovies>(
+  const onAirMovies = useFetcher<ListElement<Movie>>(
     "https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1"
   );
 
-  const trendMovies = useFetcher<ListMovies>(
+  const trendMovies = useFetcher<ListElement<Movie>>(
     "https://api.themoviedb.org/3/movie/popular?language=fr-FR&page=1"
   );
-  const topRatedMovies = useFetcher<ListMovies>(
+  const topRatedMovies = useFetcher<ListElement<Movie>>(
     "https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=1"
   );
-  const upcomingMovies = useFetcher<ListMovies>(
+  const upcomingMovies = useFetcher<ListElement<Movie>>(
     "https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1"
   );
 
-  function getRandomMovie(movies: ListMovies): ListMoviesSingleResult {
+  function getRandomMovie(movies: ListElement<Movie>): Movie {
     const length = movies.results.length;
     const index = Math.floor(Math.random() * length);
 

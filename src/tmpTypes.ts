@@ -1,11 +1,11 @@
-export interface ListMovies {
+export interface ListElement<T> {
   page: string;
-  results: Array<ListMoviesSingleResult>;
+  results: Array<T>;
   total_pages: number;
   total_results: number;
 }
 
-export interface ListMoviesSingleResult {
+export interface Movie {
   adult: boolean;
   backdrop_path: string;
   genre_ids: Array<number>;
@@ -22,27 +22,18 @@ export interface ListMoviesSingleResult {
   vote_count: number;
 }
 
-export interface MovieDetails {
-  adult: boolean;
-  backdrop_path: string;
+export interface MovieDetails extends Movie {
   belongs_to_collection: Collection | null;
   budget: number;
   genres: Array<Genre>;
   homepage: string | null;
-  id: number;
   imdb_id: string;
   origin_country: Array<string>;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
   production_companies: Array<ProductionCompany>;
   production_countries: Array<{
     iso_3166_1: string;
     name: string;
   }>;
-  release_date: string;
   revenue: number;
   runtime: number;
   spoken_languages: Array<{
@@ -52,60 +43,38 @@ export interface MovieDetails {
   }>;
   status: string;
   tagline: string;
-  title: string;
-  video: boolean;
-  vote_average: number;
-  vote_count: number;
 }
 
-export interface ListSeries {
-  page: string;
-  results: Array<ListSerieSingleResult>;
-  total_pages: number;
-  total_results: number;
-}
-
-export interface ListSerieSingleResult {
+export interface Series {
   adult: boolean;
   backdrop_path: string;
   genre_ids: Array<number>;
   id: number;
-  original_country: Array<string>;
-  original_language: string;
-  original_name: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  first_air_date: string;
-  name: string;
-  vote_average: number;
-  vote_count: number;
-}
-
-export interface SerieDetails {
-  adult: boolean;
-  backdrop_path: string;
-  created_by: Array<SerieCreator>;
-  episode_run_time: Array<number>;
-  first_air_date: string;
-  genres: Array<Genre>;
-  homepage: string | null;
-  id: number;
-  in_production: boolean;
-  languages: Array<string>;
-  last_air_date: string;
-  last_episode_to_air: Episode;
-  name: string;
-  next_episode_to_air: Episode | null;
-  networks: Array<Network>;
-  number_of_episodes: number;
-  number_of_seasons: number;
   origin_country: Array<string>;
   original_language: string;
   original_name: string;
   overview: string;
   popularity: number;
   poster_path: string;
+  first_air_date: string;
+  name: string;
+  vote_average: number;
+  vote_count: number;
+}
+
+export interface SerieDetails extends Series {
+  created_by: Array<SerieCreator>;
+  episode_run_time: Array<number>;
+  genres: Array<Genre>;
+  homepage: string | null;
+  in_production: boolean;
+  languages: Array<string>;
+  last_air_date: string;
+  last_episode_to_air: Episode;
+  next_episode_to_air: Episode | null;
+  networks: Array<Network>;
+  number_of_episodes: number;
+  number_of_seasons: number;
   production_companies: Array<ProductionCompany>;
   production_countries: Array<{
     iso_3166_1: string;
@@ -120,8 +89,6 @@ export interface SerieDetails {
   status: string;
   tagline: string;
   type: string;
-  vote_average: number;
-  vote_count: number;
 }
 
 interface Genre {
@@ -186,12 +153,12 @@ export interface Season {
   vote_average: number;
 }
 
-export interface ListCasting {
-  cast: Array<ListCastingPerson>;
+export interface ListCasting<T> {
+  cast: Array<T>;
   id: string;
 }
 
-export interface ListCastingPerson {
+export interface Person {
   adult: boolean;
   gender: number;
   id: number;
@@ -222,23 +189,13 @@ export interface PersonDetails {
   profile_path: string;
 }
 
-export interface PersonListMovies {
-  cast: Array<PersonSingleMovie>;
-  id: number;
-}
-
-export interface PersonSingleMovie extends ListMoviesSingleResult {
+export interface PersonSingleMovie extends Movie {
   character: string;
   credit_id: string;
   order: number;
 }
 
-export interface PersonListSeries {
-  cast: Array<PersonSingleSeries>;
-  id: number;
-}
-
-export interface PersonSingleSeries extends ListSerieSingleResult {
+export interface PersonSingleSeries extends Series {
   character: string;
   credit_id: string;
   order: number;

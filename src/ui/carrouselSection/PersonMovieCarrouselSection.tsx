@@ -1,10 +1,10 @@
-import type { PersonListMovies } from "../../tmpTypes";
+import type { ListCasting, PersonSingleMovie } from "../../tmpTypes";
 import { MovieCarrousel } from "../carrousel/MovieCarrousel";
 import "./carouselSection.css";
 
 interface PersonMovieCarrouselSectionProps {
   title?: string;
-  data: PersonListMovies | undefined;
+  data: ListCasting<PersonSingleMovie> | undefined;
 }
 
 export function PersonMovieCarrouselSection({

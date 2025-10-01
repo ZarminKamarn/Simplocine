@@ -8,7 +8,7 @@ interface SeriesProps {
   series: SerieDetails;
 }
 
-export function Series({ series }: SeriesProps) {
+export function SeriesSection({ series }: SeriesProps) {
   return (
     <section className="details-section">
       <Image

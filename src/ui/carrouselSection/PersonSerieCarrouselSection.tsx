@@ -1,11 +1,11 @@
-import type { PersonListSeries } from "../../tmpTypes";
+import type { ListCasting, PersonSingleSeries } from "../../tmpTypes";
 import { SerieCarrousel } from "../carrousel/SerieCarrousel";
 import { TitleH2 } from "../title/TitleH2";
 import "./carouselSection.css";
 
 interface PersonSerieCarrouselSection {
   title?: string;
-  data: PersonListSeries | undefined;
+  data: ListCasting<PersonSingleSeries> | undefined;
 }
 
 export function PersonSerieCarrouselSection({

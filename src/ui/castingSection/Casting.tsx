@@ -1,11 +1,11 @@
 import { Link } from "react-router";
-import type { ListCastingPerson } from "../../tmpTypes";
+import type { Person } from "../../tmpTypes";
 import "./casting.css";
 import { Image } from "../image/Image";
 import { Paragraph } from "../paragraph/Paragraph";
 
 interface CastingProps {
-  cast: ListCastingPerson;
+  cast: Person;
 }
 
 export function Casting({ cast }: CastingProps) {

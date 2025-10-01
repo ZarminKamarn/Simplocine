@@ -1,11 +1,11 @@
-import type { ListMovies } from "../../tmpTypes";
+import type { ListElement, Movie } from "../../tmpTypes";
 import { MovieCarrousel } from "../carrousel/MovieCarrousel";
 import { TitleH2 } from "../title/TitleH2";
 import "./carouselSection.css";
 
 interface MovieCarrouselSectionProps {
   title?: string;
-  data: ListMovies | undefined;
+  data: ListElement<Movie> | undefined;
 }
 
 export function MovieCarrouselSection({

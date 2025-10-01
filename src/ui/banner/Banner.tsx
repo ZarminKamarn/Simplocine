@@ -1,12 +1,12 @@
 import { Link } from "react-router";
-import type { ListMoviesSingleResult } from "../../tmpTypes";
+import type { Movie } from "../../tmpTypes";
 import "./banner.css";
 import { TitleH2 } from "../title/TitleH2";
 import { Image } from "../image/Image";
 import { Paragraph } from "../paragraph/Paragraph";
 
 interface BannerProps {
-  movie: ListMoviesSingleResult;
+  movie: Movie;
 }
 
 export function Banner({ movie }: BannerProps) {

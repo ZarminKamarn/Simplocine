@@ -3,7 +3,9 @@ import { useFetcher } from "../../../useFetcher";
 import {
   type MovieDetails,
   type ListCasting,
-  type ListMovies,
+  type Person,
+  type ListElement,
+  type Movie,
 } from "../../../tmpTypes";
 import { useState } from "react";
 import { MovieCarrouselSection } from "../../carrouselSection/MovieCarrouselSection";
@@ -21,10 +23,10 @@ export function MoviePage() {
   const movie = useFetcher<MovieDetails>(
     `https://api.themoviedb.org/3/movie/${params.id}?language=fr-FR`
   );
-  const casting = useFetcher<ListCasting>(
+  const casting = useFetcher<ListCasting<Person>>(
     `https://api.themoviedb.org/3/movie/${params.id}/credits?language=fr-FR`
   );
-  const recommendedMovies = useFetcher<ListMovies>(
+  const recommendedMovies = useFetcher<ListElement<Movie>>(
     `https://api.themoviedb.org/3/movie/${params.id}/recommendations?language=fr-FR&page=1`
   );
 

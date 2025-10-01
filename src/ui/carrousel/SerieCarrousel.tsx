@@ -1,9 +1,9 @@
 import { Card } from "../card/Card";
 import "./carrousel.css";
-import type { ListSerieSingleResult } from "../../tmpTypes";
+import type { Series } from "../../tmpTypes";
 
 interface SerieCarrouselProps {
-  data: Array<ListSerieSingleResult>;
+  data: Array<Series>;
 }
 
 export function SerieCarrousel({ data }: SerieCarrouselProps) {
