@@ -8,24 +8,8 @@
   margin-bottom: 12px;
 }
 
-.inner-link-details-btn {
-  background: transparent;
-  border: none;
-  color: rgb(238, 254, 255);
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.inner-link-details-btn:hover {
-  border-bottom: 3px solid rgb(238, 254, 255);
-}
-
 .details-page-main {
   display: flex;
   flex-direction: column;
   gap: 60px;
-}
-
-.selected-btn {
-  border-bottom: 3px solid rgb(238, 254, 255);
 }

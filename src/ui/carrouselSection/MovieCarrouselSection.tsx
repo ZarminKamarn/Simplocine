@@ -1,5 +1,6 @@
 import type { ListMovies } from "../../tmpTypes";
 import { MovieCarrousel } from "../carrousel/MovieCarrousel";
+import { TitleH2 } from "../title/TitleH2";
 import "./carouselSection.css";
 
 interface MovieCarrouselSectionProps {
@@ -13,7 +14,7 @@ export function MovieCarrouselSection({
 }: MovieCarrouselSectionProps) {
   return (
     <section className="carousel-section">
-      {title && <h2>{title}</h2>}
+      {title && <TitleH2 origin="section" text={title} />}
       {data && data.results && <MovieCarrousel data={data.results} />}
     </section>
   );

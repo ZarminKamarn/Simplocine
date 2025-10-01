@@ -11,10 +11,6 @@
   min-width: 300px;
 }
 
-.casting-img {
-  max-width: 120px;
-}
-
 .casting-list {
   display: flex;
   flex-direction: row;

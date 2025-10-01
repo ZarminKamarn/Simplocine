@@ -13,11 +13,6 @@
   letter-spacing: 1px;
 }
 
-.person-img {
-  width: 100%;
-  max-width: 300px;
-}
-
 .person-info {
   display: flex;
   flex-direction: column;

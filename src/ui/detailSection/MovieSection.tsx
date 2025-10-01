@@ -1,4 +1,6 @@
 import type { MovieDetails } from "../../tmpTypes";
+import { Image } from "../image/Image";
+import { TitleH2 } from "../title/TitleH2";
 import "./detailsSection.css";
 
 interface MovieSectionProps {
@@ -8,13 +10,13 @@ interface MovieSectionProps {
 export function MovieSection({ movie }: MovieSectionProps) {
   return (
     <section className="details-section">
-      <img
+      <Image
         src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
         alt={`image de ${movie.title}`}
-        className="details-img"
+        origin="banner"
       />
       <div className="details-info">
-        <h2 className="details-title">{movie.title}</h2>
+        <TitleH2 origin="banner" text={movie.title} />
         <p className="details-description">{movie.overview}</p>
         <p>Note: {movie.vote_average}/10</p>
       </div>

@@ -16,12 +16,6 @@
   max-width: 500px;
 }
 
-.banner-img {
-  width: 100%;
-  max-width: 1000px;
-  filter: brightness(60%) saturate(150%);
-}
-
 .banner-link {
   background-color: rgb(53, 54, 46);
   color: rgb(238, 254, 255);
@@ -37,11 +31,7 @@
   color: rgb(255, 127, 127);
 }
 
-.banner-title {
-  font-size: 30px;
-}
-
 .banner-description {
   line-height: 24px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }

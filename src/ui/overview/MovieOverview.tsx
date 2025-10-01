@@ -1,4 +1,5 @@
 import type { MovieDetails } from "../../tmpTypes";
+import { Image } from "../image/Image";
 import "./overview.css";
 
 interface MovieOverviewProps {
@@ -8,10 +9,10 @@ interface MovieOverviewProps {
 export function MovieOverview({ movie }: MovieOverviewProps) {
   return (
     <section className="overview-section">
-      <img
+      <Image
         src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
         alt={`poster de ${movie.title}`}
-        className="overview-img"
+        origin="overview"
       />
       <div>
         <p className="overview-info">Nom original: {movie.original_title}</p>

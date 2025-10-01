@@ -1,4 +1,5 @@
 import type { PersonDetails } from "../../tmpTypes";
+import { Image } from "../image/Image";
 import "./personSection.css";
 
 interface PersonSectionProps {
@@ -8,10 +9,10 @@ interface PersonSectionProps {
 export function PersonSection({ person }: PersonSectionProps) {
   return (
     <section className="person-section">
-      <img
+      <Image
         src={`https://image.tmdb.org/t/p/original/${person.profile_path}`}
         alt={`Photo de ${person.name}`}
-        className="person-img"
+        origin="person"
       />
       <div className="person-info">
         <h2 className="person-title">{person.name}</h2>

@@ -1,21 +1,21 @@
-import type { ListSeries } from "../../tmpTypes";
+import type { PersonListSeries } from "../../tmpTypes";
 import { SerieCarrousel } from "../carrousel/SerieCarrousel";
 import { TitleH2 } from "../title/TitleH2";
 import "./carouselSection.css";
 
-interface SerieCarrouselSectionProps {
+interface PersonSerieCarrouselSection {
   title?: string;
-  data: ListSeries | undefined;
+  data: PersonListSeries | undefined;
 }
 
-export function SerieCarrouselSection({
+export function PersonSerieCarrouselSection({
   title,
   data,
-}: SerieCarrouselSectionProps) {
+}: PersonSerieCarrouselSection) {
   return (
     <section className="carousel-section">
       {title && <TitleH2 origin="banner" text={title} />}
-      {data && data.results && <SerieCarrousel data={data.results} />}
+      {data && data.cast && <SerieCarrousel data={data.cast} />}
     </section>
   );
 }

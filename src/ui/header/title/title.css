@@ -5,9 +5,8 @@
   align-items: center;
 }
 
-.title-logo {
-  max-width: 45px;
-  max-height: 45px;
+.title h1 {
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .title-text {

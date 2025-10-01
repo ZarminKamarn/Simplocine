@@ -35,36 +35,32 @@ export function SeriePage() {
             onClick={() => {
               setBottomDiv("overview");
             }}
-            className={`inner-link-details-btn ${
-              bottomDiv === "overview" && "selected-btn"
-            }`}
+            usage="details-selector"
+            isSelected={bottomDiv === "overview"}
           />
           <Button
             name="Saisons"
             onClick={() => {
               setBottomDiv("seasons");
             }}
-            className={`inner-link-details-btn ${
-              bottomDiv === "seasons" && "selected-btn"
-            }`}
+            usage="details-selector"
+            isSelected={bottomDiv === "seasons"}
           />
           <Button
             name="Casting"
             onClick={() => {
               setBottomDiv("casting");
             }}
-            className={`inner-link-details-btn ${
-              bottomDiv === "casting" && "selected-btn"
-            }`}
+            usage="details-selector"
+            isSelected={bottomDiv === "casting"}
           />
           <Button
             name="Recommandations"
             onClick={() => {
               setBottomDiv("recommendations");
             }}
-            className={`inner-link-details-btn ${
-              bottomDiv === "recommendations" && "selected-btn"
-            }`}
+            usage="details-selector"
+            isSelected={bottomDiv === "recommendations"}
           />
         </div>
         {bottomDiv === "overview" && series.data && (

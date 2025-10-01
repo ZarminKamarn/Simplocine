@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import "./App.css";
 import { Header } from "./ui/header/Header";
 import { Homepage } from "./ui/pages/homepage/Homepage";
 import { SeriePage } from "./ui/pages/detailsPage/SeriePage";

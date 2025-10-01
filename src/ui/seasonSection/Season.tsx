@@ -1,4 +1,5 @@
 import type { Season } from "../../tmpTypes";
+import { Image } from "../image/Image";
 import "./season.css";
 
 interface SeasonProps {
@@ -8,10 +9,10 @@ interface SeasonProps {
 export function SeasonContent({ season }: SeasonProps) {
   return (
     <>
-      <img
+      <Image
         src={`https://image.tmdb.org/t/p/w200/${season.poster_path}`}
         alt={`Affiche saison ${season.season_number}`}
-        className="season-img"
+        origin="season"
       />
       <div className="season-info">
         <h3>{season.name}</h3>

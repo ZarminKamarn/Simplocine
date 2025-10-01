@@ -1,0 +1,27 @@
+.banner-img {
+  width: 100%;
+  max-width: 1000px;
+  filter: brightness(70%) saturate(150%);
+}
+
+.casting-img {
+  max-width: 120px;
+}
+
+.title-img {
+  max-width: 45px;
+  max-height: 45px;
+}
+
+.overview-img {
+  max-width: 200px;
+}
+
+.season-img {
+  max-width: 120px;
+}
+
+.person-img {
+  width: 100%;
+  max-width: 300px;
+}

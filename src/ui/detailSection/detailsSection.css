@@ -1,16 +1,10 @@
-.details-img {
-  width: 100%;
-  max-width: 1000px;
-  filter: brightness(60%) saturate(150%);
-}
-
 .details-title {
   font-size: 30px;
 }
 
 .details-description {
   line-height: 24px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .details-section {

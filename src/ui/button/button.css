@@ -1,0 +1,15 @@
+.inner-link-details-btn {
+  background: transparent;
+  border: none;
+  color: rgb(238, 254, 255);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.inner-link-details-btn:hover {
+  border-bottom: 3px solid rgb(238, 254, 255);
+}
+
+.selected-btn {
+  border-bottom: 3px solid rgb(238, 254, 255);
+}

@@ -5,7 +5,7 @@ import {
   type PersonDetails,
 } from "../../../tmpTypes";
 import { useFetcher } from "../../../useFetcher";
-import { PersonSection } from "../../detailSection/PersonSection";
+import { PersonSection } from "../../personDetailSection/PersonSection";
 
 export function PersonPage() {
   const params = useParams();

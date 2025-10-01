@@ -221,3 +221,25 @@ export interface PersonDetails {
   popularity: number;
   profile_path: string;
 }
+
+export interface PersonListMovies {
+  cast: Array<PersonSingleMovie>;
+  id: number;
+}
+
+export interface PersonSingleMovie extends ListMoviesSingleResult {
+  character: string;
+  credit_id: string;
+  order: number;
+}
+
+export interface PersonListSeries {
+  cast: Array<PersonSingleSeries>;
+  id: number;
+}
+
+export interface PersonSingleSeries extends ListSerieSingleResult {
+  character: string;
+  credit_id: string;
+  order: number;
+}

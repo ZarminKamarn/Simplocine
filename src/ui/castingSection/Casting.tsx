@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import type { ListCastingPerson } from "../../tmpTypes";
 import "./casting.css";
+import { Image } from "../image/Image";
 
 interface CastingProps {
   cast: ListCastingPerson;
@@ -9,10 +10,10 @@ interface CastingProps {
 export function Casting({ cast }: CastingProps) {
   return (
     <>
-      <img
+      <Image
         src={`https://image.tmdb.org/t/p/w200/${cast.profile_path}`}
         alt={`Photo de ${cast.name}`}
-        className="casting-img"
+        origin="casting"
       />
       <div>
         <h3>

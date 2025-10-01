@@ -1,4 +1,5 @@
 import type { SerieDetails } from "../../tmpTypes";
+import { Image } from "../image/Image";
 import "./overview.css";
 
 interface SerieOverviewProps {
@@ -8,10 +9,10 @@ interface SerieOverviewProps {
 export function SerieOverview({ series }: SerieOverviewProps) {
   return (
     <section className="overview-section">
-      <img
+      <Image
         src={`https://image.tmdb.org/t/p/w200/${series.poster_path}`}
         alt={`poster de ${series.name}`}
-        className="overview-img"
+        origin="overview"
       />
       <div className="overview-column">
         <p className="overview-info">Nom original: {series.original_name}</p>
