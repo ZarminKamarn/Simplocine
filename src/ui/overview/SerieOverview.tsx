@@ -23,13 +23,13 @@ export function SerieOverview({ series }: SerieOverviewProps) {
         <Paragraph
           type="overview-info"
           text={`Genres: ${series.genres.map((genre) => {
-            return `${genre.name}, `;
+            return `${genre.name}`;
           })}`}
         />
         <Paragraph
           type="overview-info"
           text={`Créé par: ${series.created_by.map((creator) => {
-            return `${creator.name}, `;
+            return `${creator.name}`;
           })}`}
         />
       </div>

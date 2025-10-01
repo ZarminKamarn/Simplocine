@@ -1,5 +1,6 @@
 import type { Season } from "../../tmpTypes";
 import { Image } from "../image/Image";
+import { Paragraph } from "../paragraph/Paragraph";
 import "./season.css";
 
 interface SeasonProps {
@@ -16,8 +17,8 @@ export function SeasonContent({ season }: SeasonProps) {
       />
       <div className="season-info">
         <h3>{season.name}</h3>
-        <p className="season-description">{season.overview}</p>
-        <p>{season.episode_count} épisodes</p>
+        <Paragraph type="description" text={season.overview} />
+        <Paragraph text={`${season.episode_count} épisodes`} />
       </div>
     </>
   );

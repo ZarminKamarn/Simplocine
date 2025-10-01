@@ -24,7 +24,7 @@ export function MovieOverview({ movie }: MovieOverviewProps) {
           type="overview-info"
           text={`Genres: 
           ${movie.genres.map((genre) => {
-            return `${genre.name}, `;
+            return `${genre.name}`;
           })}`}
         />
         <Paragraph

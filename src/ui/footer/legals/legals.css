@@ -1,0 +1,10 @@
+.legals {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.legals a {
+  text-decoration: underline;
+}
