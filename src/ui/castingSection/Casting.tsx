@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import type { ListCastingPerson } from "../../tmpTypes";
 import "./casting.css";
 import { Image } from "../image/Image";
+import { Paragraph } from "../paragraph/Paragraph";
 
 interface CastingProps {
   cast: ListCastingPerson;
@@ -21,7 +22,7 @@ export function Casting({ cast }: CastingProps) {
             {cast.name}
           </Link>
         </h3>
-        <p>Jouant: {cast.character}</p>
+        <Paragraph text={`Jouant: ${cast.character}`} />
       </div>
     </>
   );

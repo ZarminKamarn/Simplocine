@@ -1,5 +1,6 @@
 import type { SerieDetails } from "../../tmpTypes";
 import { Image } from "../image/Image";
+import { Paragraph } from "../paragraph/Paragraph";
 import "./overview.css";
 
 interface SerieOverviewProps {
@@ -14,36 +15,42 @@ export function SerieOverview({ series }: SerieOverviewProps) {
         alt={`poster de ${series.name}`}
         origin="overview"
       />
-      <div className="overview-column">
-        <p className="overview-info">Nom original: {series.original_name}</p>
-        <p className="overview-info">
-          Genres:{" "}
-          {series.genres.map((genre) => {
+      <div>
+        <Paragraph
+          type="overview-info"
+          text={`Nom original: ${series.original_name}`}
+        />
+        <Paragraph
+          type="overview-info"
+          text={`Genres: ${series.genres.map((genre) => {
             return `${genre.name}, `;
-          })}
-        </p>
-        <p className="overview-info">
-          Créé par:{" "}
-          {series.created_by.map((creator) => {
+          })}`}
+        />
+        <Paragraph
+          type="overview-info"
+          text={`Créé par: ${series.created_by.map((creator) => {
             return `${creator.name}, `;
-          })}
-        </p>
+          })}`}
+        />
       </div>
-      <div className="overview-column">
-        <p className="overview-info">
-          Pays d'origine: {series.origin_country.toString()}
-        </p>
-        <p className="overview-info">
-          {series.number_of_seasons} saisons et {series.number_of_episodes}{" "}
-          épisodes
-        </p>
-        <p className="overview-info">
-          Date du premier épisode: {series.first_air_date}
-        </p>
+      <div>
+        <Paragraph
+          type="overview-info"
+          text={`Pays d'origine: ${series.origin_country.toString()}`}
+        />
+        <Paragraph
+          type="overview-info"
+          text={`${series.number_of_seasons} saisons et ${series.number_of_episodes} épisodes`}
+        />
+        <Paragraph
+          type="overview-info"
+          text={`Date du premier épisode: ${series.first_air_date}`}
+        />
         {series.episode_run_time.length > 0 && (
-          <p className="overview-info">
-            Durée d'un épisode: {series.episode_run_time} minutes
-          </p>
+          <Paragraph
+            type="overview-info"
+            text={`Durée d'un épisode: ${series.episode_run_time} minutes`}
+          />
         )}
       </div>
     </section>

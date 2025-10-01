@@ -3,6 +3,7 @@ import type { ListMoviesSingleResult } from "../../tmpTypes";
 import "./banner.css";
 import { TitleH2 } from "../title/TitleH2";
 import { Image } from "../image/Image";
+import { Paragraph } from "../paragraph/Paragraph";
 
 interface BannerProps {
   movie: ListMoviesSingleResult;
@@ -18,7 +19,7 @@ export function Banner({ movie }: BannerProps) {
       />
       <div className="banner-info">
         <TitleH2 origin="banner" text={movie.title} />
-        <p className="banner-description">{movie.overview}</p>
+        <Paragraph type="description" text={movie.overview} />
         <Link to={`/movies/${movie.id}`} className="banner-link">
           Voir
         </Link>

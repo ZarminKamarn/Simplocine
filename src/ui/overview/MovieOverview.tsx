@@ -1,5 +1,6 @@
 import type { MovieDetails } from "../../tmpTypes";
 import { Image } from "../image/Image";
+import { Paragraph } from "../paragraph/Paragraph";
 import "./overview.css";
 
 interface MovieOverviewProps {
@@ -15,21 +16,32 @@ export function MovieOverview({ movie }: MovieOverviewProps) {
         origin="overview"
       />
       <div>
-        <p className="overview-info">Nom original: {movie.original_title}</p>
-        <p className="overview-info">
-          Genres:{" "}
-          {movie.genres.map((genre) => {
+        <Paragraph
+          type="overview-info"
+          text={`Nom original: ${movie.original_title}`}
+        />
+        <Paragraph
+          type="overview-info"
+          text={`Genres: 
+          ${movie.genres.map((genre) => {
             return `${genre.name}, `;
-          })}
-        </p>
-        <p className="overview-info">
-          Pays d'origine: {movie.origin_country.toString()}
-        </p>
+          })}`}
+        />
+        <Paragraph
+          type="overview-info"
+          text={`Pays d'origine: ${movie.origin_country.toString()}`}
+        />
       </div>
       <div>
-        <p className="overview-info">Date de sortie: {movie.release_date}</p>
-        <p className="overview-info">Durée: {movie.runtime}</p>
-        <p className="overview-info">Budget: {movie.budget}</p>
+        <Paragraph
+          type="overview-info"
+          text={`Date de sortie: ${movie.release_date}`}
+        />
+        <Paragraph
+          type="overview-info"
+          text={`Durée: ${movie.runtime} minutes`}
+        />
+        <Paragraph type="overview-info" text={`Budget: ${movie.budget}`} />
       </div>
     </section>
   );

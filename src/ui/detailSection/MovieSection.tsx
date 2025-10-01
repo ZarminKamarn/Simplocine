@@ -1,5 +1,6 @@
 import type { MovieDetails } from "../../tmpTypes";
 import { Image } from "../image/Image";
+import { Paragraph } from "../paragraph/Paragraph";
 import { TitleH2 } from "../title/TitleH2";
 import "./detailsSection.css";
 
@@ -17,8 +18,8 @@ export function MovieSection({ movie }: MovieSectionProps) {
       />
       <div className="details-info">
         <TitleH2 origin="banner" text={movie.title} />
-        <p className="details-description">{movie.overview}</p>
-        <p>Note: {movie.vote_average}/10</p>
+        <Paragraph text={movie.overview} type="description" />
+        <Paragraph text={`Note: ${movie.vote_average}/10`} />
       </div>
     </section>
   );
