@@ -1,19 +1,19 @@
 import { useParams } from "react-router";
-import { useFetcher } from "../../../useFetcher";
+import { useFetcher } from "../../core/useFetcher";
 import type {
   ListCasting,
   ListElement,
   Person,
   SerieDetails,
   Series,
-} from "../../../tmpTypes";
-import { SerieCarrouselSection } from "../../carrouselSection/SerieCarrouselSection";
+} from "../../core/types";
+import { SerieCarrouselSection } from "../../ui/carrouselSection/SerieCarrouselSection";
 import { useState } from "react";
-import { Button } from "../../button/Button";
-import { SeasonSection } from "../../seasonSection/SeasonSection";
-import { SeriesSection } from "../../detailSection/SeriesSection";
-import { CastingSection } from "../../castingSection/CastingSection";
-import { SerieOverview } from "../../overview/SerieOverview";
+import { Button } from "../../ui/button/Button";
+import { SeasonSection } from "../../ui/seasonSection/SeasonSection";
+import { SeriesSection } from "../../ui/detailSection/SeriesSection";
+import { CastingSection } from "../../ui/castingSection/CastingSection";
+import { SerieOverview } from "../../ui/overview/SerieOverview";
 import "./detailsPage.css";
 
 export function SeriePage() {
@@ -33,7 +33,12 @@ export function SeriePage() {
 
   return (
     <div className="main">
-      {series.data && <SeriesSection series={series.data} />}
+      <SeriesSection
+        series={series.data}
+        isError={series.isError}
+        isLoading={series.isLoading}
+        errorMessage={series.errorMsg}
+      />
       <div>
         <div className="btn-div">
           <Button
@@ -70,16 +75,36 @@ export function SeriePage() {
           />
         </div>
         {bottomDiv === "overview" && series.data && (
-          <SerieOverview series={series.data} />
+          <SerieOverview
+            series={series.data}
+            isError={series.isError}
+            isLoading={series.isLoading}
+            errorMessage={series.errorMsg}
+          />
         )}
-        {bottomDiv === "seasons" && series.data && (
-          <SeasonSection seasons={series.data.seasons} />
+        {bottomDiv === "seasons" && (
+          <SeasonSection
+            data={series.data}
+            isError={series.isError}
+            isLoading={series.isLoading}
+            errorMessage={series.errorMsg}
+          />
         )}
-        {bottomDiv === "casting" && casting.data && (
-          <CastingSection casts={casting.data.cast} />
+        {bottomDiv === "casting" && (
+          <CastingSection
+            data={casting.data}
+            isError={casting.isError}
+            isLoading={casting.isLoading}
+            errorMessage={casting.errorMsg}
+          />
         )}
         {bottomDiv === "recommendations" && (
-          <SerieCarrouselSection data={recommendedSeries.data} />
+          <SerieCarrouselSection
+            data={recommendedSeries.data}
+            isLoading={recommendedSeries.isLoading}
+            isError={recommendedSeries.isError}
+            errorMessage={recommendedSeries.errorMsg}
+          />
         )}
       </div>
     </div>

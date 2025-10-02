@@ -1,23 +1,36 @@
-import type { Season } from "../../tmpTypes";
+import type { SerieDetails } from "../../core/types";
+import { Paragraph } from "../paragraph/Paragraph";
 import { SeasonContent } from "./Season";
 import "./season.css";
 
 interface SeasonSectionProps {
-  seasons: Array<Season>;
+  data: SerieDetails | undefined;
+  isLoading: boolean;
+  isError: boolean;
+  errorMessage: string | undefined;
 }
 
-export function SeasonSection({ seasons }: SeasonSectionProps) {
+export function SeasonSection({
+  data,
+  isLoading,
+  isError,
+  errorMessage,
+}: SeasonSectionProps) {
   return (
     <section className="season-section">
-      <ul className="season-list">
-        {seasons.map((season) => {
-          return (
-            <li className="season-item">
-              <SeasonContent season={season} />
-            </li>
-          );
-        })}
-      </ul>
+      {(isLoading && <Paragraph text="En cours de chargement..." />) ||
+        (isError && <Paragraph text={errorMessage || ""} />) ||
+        (data && data.seasons && (
+          <ul className="casting-list">
+            {data.seasons.map((season) => {
+              return (
+                <li className="season-item">
+                  <SeasonContent season={season} />
+                </li>
+              );
+            })}
+          </ul>
+        ))}
     </section>
   );
 }

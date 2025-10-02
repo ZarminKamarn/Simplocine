@@ -1,4 +1,4 @@
-import type { ListCasting, PersonSingleMovie } from "../../tmpTypes";
+import type { ListCasting, PersonSingleMovie } from "../../core/types";
 import { MovieCarrousel } from "../carrousel/MovieCarrousel";
 import "./carouselSection.css";
 

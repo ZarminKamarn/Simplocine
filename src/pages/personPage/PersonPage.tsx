@@ -4,9 +4,9 @@ import {
   type Movie,
   type PersonDetails,
   type Series,
-} from "../../../tmpTypes";
-import { useFetcher } from "../../../useFetcher";
-import { PersonSection } from "../../personDetailSection/PersonSection";
+} from "../../core/types";
+import { useFetcher } from "../../core/useFetcher";
+import { PersonSection } from "../../ui/personDetailSection/PersonSection";
 
 export function PersonPage() {
   const params = useParams();
@@ -21,7 +21,14 @@ export function PersonPage() {
   );
 
   return (
-    <>{person.data && <PersonSection person={person.data} />}</>
+    <>
+      <PersonSection
+        person={person.data}
+        isError={person.isError}
+        isLoading={person.isLoading}
+        errorMessage={person.errorMsg}
+      />
+    </>
     /*
     <MovieCarrouselSection
         title="Filmographie"

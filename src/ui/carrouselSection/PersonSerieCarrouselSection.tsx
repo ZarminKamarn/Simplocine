@@ -1,4 +1,4 @@
-import type { ListCasting, PersonSingleSeries } from "../../tmpTypes";
+import type { ListCasting, PersonSingleSeries } from "../../core/types";
 import { SerieCarrousel } from "../carrousel/SerieCarrousel";
 import { TitleH2 } from "../title/TitleH2";
 import "./carouselSection.css";

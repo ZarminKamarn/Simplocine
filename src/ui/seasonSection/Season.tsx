@@ -1,4 +1,4 @@
-import type { Season } from "../../tmpTypes";
+import type { Season } from "../../core/types";
 import { Image } from "../image/Image";
 import { Paragraph } from "../paragraph/Paragraph";
 import "./season.css";

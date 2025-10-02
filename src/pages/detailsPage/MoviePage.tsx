@@ -1,18 +1,18 @@
 import { useParams } from "react-router";
-import { useFetcher } from "../../../useFetcher";
+import { useFetcher } from "../../core/useFetcher";
 import {
   type MovieDetails,
   type ListCasting,
   type Person,
   type ListElement,
   type Movie,
-} from "../../../tmpTypes";
+} from "../../core/types";
 import { useState } from "react";
-import { MovieCarrouselSection } from "../../carrouselSection/MovieCarrouselSection";
-import { CastingSection } from "../../castingSection/CastingSection";
-import { Button } from "../../button/Button";
-import { MovieSection } from "../../detailSection/MovieSection";
-import { MovieOverview } from "../../overview/MovieOverview";
+import { MovieCarrouselSection } from "../../ui/carrouselSection/MovieCarrouselSection";
+import { CastingSection } from "../../ui/castingSection/CastingSection";
+import { Button } from "../../ui/button/Button";
+import { MovieSection } from "../../ui/detailSection/MovieSection";
+import { MovieOverview } from "../../ui/overview/MovieOverview";
 import "./detailsPage.css";
 
 export function MoviePage() {
@@ -32,7 +32,12 @@ export function MoviePage() {
 
   return (
     <div className="details-page-main">
-      {movie.data && <MovieSection movie={movie.data} />}
+      <MovieSection
+        movie={movie.data}
+        isError={movie.isError}
+        isLoading={movie.isLoading}
+        errorMessage={movie.errorMsg}
+      />
       <div>
         <div className="btn-div">
           <Button
@@ -62,13 +67,28 @@ export function MoviePage() {
         </div>
 
         {bottomDiv === "overview" && movie.data && (
-          <MovieOverview movie={movie.data} />
+          <MovieOverview
+            movie={movie.data}
+            isError={movie.isError}
+            isLoading={movie.isLoading}
+            errorMessage={movie.errorMsg}
+          />
         )}
         {bottomDiv === "casting" && casting.data && (
-          <CastingSection casts={casting.data.cast} />
+          <CastingSection
+            data={casting.data}
+            isError={casting.isError}
+            isLoading={casting.isLoading}
+            errorMessage={casting.errorMsg}
+          />
         )}
         {bottomDiv === "recommendations" && (
-          <MovieCarrouselSection data={recommendedMovies.data} />
+          <MovieCarrouselSection
+            data={recommendedMovies.data}
+            isLoading={recommendedMovies.isLoading}
+            isError={recommendedMovies.isError}
+            errorMessage={recommendedMovies.errorMsg}
+          />
         )}
       </div>
     </div>

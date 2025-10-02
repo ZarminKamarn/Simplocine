@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import type { Person } from "../../tmpTypes";
+import type { Person } from "../../core/types";
 import "./casting.css";
 import { Image } from "../image/Image";
 import { Paragraph } from "../paragraph/Paragraph";

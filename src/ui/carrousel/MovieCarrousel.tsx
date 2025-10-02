@@ -1,6 +1,6 @@
 import { Card } from "../card/Card";
 import "./carrousel.css";
-import type { Movie } from "../../tmpTypes";
+import type { Movie } from "../../core/types";
 
 interface MovieCarrouselProps {
   data: Array<Movie>;

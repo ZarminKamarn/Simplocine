@@ -1,6 +1,6 @@
 import { Card } from "../card/Card";
 import "./carrousel.css";
-import type { Series } from "../../tmpTypes";
+import type { Series } from "../../core/types";
 
 interface SerieCarrouselProps {
   data: Array<Series>;

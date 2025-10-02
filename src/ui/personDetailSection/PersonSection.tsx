@@ -1,43 +1,26 @@
-import type { PersonDetails } from "../../tmpTypes";
-import { Image } from "../image/Image";
+import type { PersonDetails } from "../../core/types";
 import { Paragraph } from "../paragraph/Paragraph";
-import { TitleH2 } from "../title/TitleH2";
 import "./personSection.css";
+import { PersonSectionContent } from "./PersonSectionContent";
 
 interface PersonSectionProps {
-  person: PersonDetails;
+  person: PersonDetails | undefined;
+  isLoading: boolean;
+  isError: boolean;
+  errorMessage: string | undefined;
 }
 
-export function PersonSection({ person }: PersonSectionProps) {
+export function PersonSection({
+  person,
+  isLoading,
+  isError,
+  errorMessage,
+}: PersonSectionProps) {
   return (
     <section className="person-section">
-      <Image
-        src={`https://image.tmdb.org/t/p/original/${person.profile_path}`}
-        alt={`Photo de ${person.name}`}
-        origin="person"
-      />
-      <div className="person-info">
-        <TitleH2 origin="banner" text={person.name} />
-        <Paragraph type="description" text={person.biography} />
-        <Paragraph
-          text={`Genre: ${
-            (person.gender === 1 && "Femme") ||
-            (person.gender === 2 && "Homme") ||
-            (person.gender === 3 && "Non-Binaire") ||
-            (person.gender === 3 && "Inconnu")
-          }`}
-        />
-        <Paragraph
-          text={`Né${person.gender === 1 && "e"} le ${person.birthday} à ${
-            person.place_of_birth
-          }`}
-        />
-        {person.deathday && (
-          <Paragraph
-            text={`Décédé${person.gender === 1 && "e"} le ${person.deathday}`}
-          />
-        )}
-      </div>
+      {(isLoading && <Paragraph text="En cours de chargement..." />) ||
+        (isError && <Paragraph text={errorMessage || ""} />) ||
+        (person && <PersonSectionContent person={person} />)}
     </section>
   );
 }

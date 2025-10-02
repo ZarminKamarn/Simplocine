@@ -1,22 +1,35 @@
-import type { Person } from "../../tmpTypes";
+import type { ListCasting, Person } from "../../core/types";
+import { Paragraph } from "../paragraph/Paragraph";
 import { Casting } from "./Casting";
 
 interface CastingSectionProps {
-  casts: Array<Person>;
+  data: ListCasting<Person> | undefined;
+  isLoading: boolean;
+  isError: boolean;
+  errorMessage: string | undefined;
 }
 
-export function CastingSection({ casts }: CastingSectionProps) {
+export function CastingSection({
+  data,
+  isLoading,
+  isError,
+  errorMessage,
+}: CastingSectionProps) {
   return (
     <section className="casting-section">
-      <ul className="casting-list">
-        {casts.map((cast) => {
-          return (
-            <li className="casting-item">
-              <Casting cast={cast} />
-            </li>
-          );
-        })}
-      </ul>
+      {(isLoading && <Paragraph text="En cours de chargement..." />) ||
+        (isError && <Paragraph text={errorMessage || ""} />) ||
+        (data && data.cast && (
+          <ul className="casting-list">
+            {data.cast.map((cast) => {
+              return (
+                <li className="casting-item">
+                  <Casting cast={cast} />
+                </li>
+              );
+            })}
+          </ul>
+        ))}
     </section>
   );
 }

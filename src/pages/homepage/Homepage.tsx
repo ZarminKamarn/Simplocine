@@ -1,7 +1,8 @@
-import type { ListElement, Movie } from "../../../tmpTypes";
-import { useFetcher } from "../../../useFetcher";
-import { Banner } from "../../banner/Banner";
-import { MovieCarrouselSection } from "../../carrouselSection/MovieCarrouselSection";
+import type { ListElement, Movie } from "../../core/types";
+import { useFetcher } from "../../core/useFetcher";
+import { Banner } from "../../ui/banner/Banner";
+import { MovieCarrouselSection } from "../../ui/carrouselSection/MovieCarrouselSection";
+import { Paragraph } from "../../ui/paragraph/Paragraph";
 import "./homepage.css";
 
 export function Homepage() {
@@ -28,18 +29,35 @@ export function Homepage() {
 
   return (
     <div className="homepage-main">
-      {onAirMovies.data && <Banner movie={getRandomMovie(onAirMovies.data)} />}
+      {(onAirMovies.isLoading && (
+        <Paragraph text="En cours de chargement..." />
+      )) ||
+        (onAirMovies.isError && (
+          <Paragraph text={onAirMovies.errorMsg || ""} />
+        )) ||
+        (onAirMovies.data && (
+          <Banner movie={getRandomMovie(onAirMovies.data)} />
+        ))}
       <MovieCarrouselSection
         title="Les films populaires"
         data={trendMovies.data}
+        isLoading={trendMovies.isLoading}
+        isError={trendMovies.isError}
+        errorMessage={trendMovies.errorMsg}
       />
       <MovieCarrouselSection
         title="Les films les mieux notés"
         data={topRatedMovies.data}
+        isLoading={topRatedMovies.isLoading}
+        isError={topRatedMovies.isError}
+        errorMessage={topRatedMovies.errorMsg}
       />
       <MovieCarrouselSection
         title="Les films à venir"
         data={upcomingMovies.data}
+        isLoading={upcomingMovies.isLoading}
+        isError={upcomingMovies.isError}
+        errorMessage={upcomingMovies.errorMsg}
       />
     </div>
   );
