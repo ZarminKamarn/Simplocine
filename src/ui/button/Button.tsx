@@ -4,7 +4,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   name: string;
   type?: "button" | "submit" | "reset" | undefined;
   isSelected?: boolean;
-  usage?: "details-selector" | null;
+  usage?: "details-selector" | "carousel-slider" | null;
 }
 
 export function Button({
@@ -19,7 +19,8 @@ export function Button({
       type={type}
       {...props}
       className={`${isSelected && "selected-btn"} ${
-        usage === "details-selector" && "inner-link-details-btn"
+        (usage === "details-selector" && "inner-link-details-btn") ||
+        (usage === "carousel-slider" && "carousel-slider-btn")
       }`}
     >
       {name}

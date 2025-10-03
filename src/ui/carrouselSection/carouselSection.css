@@ -4,3 +4,9 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media screen and (max-width: 992px) {
+  .carousel-section {
+    padding: 0px 12px;
+  }
+}

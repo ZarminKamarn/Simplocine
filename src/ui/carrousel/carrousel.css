@@ -3,10 +3,16 @@
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 16px;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .carousel-item {
   width: 200px;
   height: auto;
+}
+
+.full-carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }

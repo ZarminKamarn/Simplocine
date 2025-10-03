@@ -13,3 +13,19 @@
 .selected-btn {
   border-bottom: 3px solid rgb(238, 254, 255);
 }
+
+.carousel-slider-btn {
+  background-color: rgb(14, 14, 0);
+  color: rgb(238, 254, 255);
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid rgb(238, 254, 255);
+  border-radius: 5px;
+  cursor: pointer;
+  height: inherit;
+}
+
+.carousel-slider-btn:hover {
+  color: rgb(255, 127, 127);
+  border-color: rgb(255, 127, 127);
+}
