@@ -23,7 +23,7 @@ export function CastingSection({
           <ul className="casting-list">
             {data.cast.map((cast) => {
               return (
-                <li className="casting-item">
+                <li className="casting-item" key={cast.id}>
                   <Casting cast={cast} />
                 </li>
               );

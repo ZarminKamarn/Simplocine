@@ -11,7 +11,7 @@ export function SerieCarrousel({ data }: SerieCarrouselProps) {
     <ul className="carousel">
       {data.map((item) => {
         return (
-          <li className="carousel-item">
+          <li className="carousel-item" key={item.id}>
             <Card
               imageSrc={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
               link={`/series/${item.id}`}

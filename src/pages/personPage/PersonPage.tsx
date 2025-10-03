@@ -9,6 +9,7 @@ import { useFetcher } from "../../core/useFetcher";
 import { PersonSection } from "../../ui/personDetailSection/PersonSection";
 import { PersonMovieCarrouselSection } from "../../ui/carrouselSection/PersonMovieCarrouselSection";
 import { PersonSerieCarrouselSection } from "../../ui/carrouselSection/PersonSerieCarrouselSection";
+import "./personPage.css";
 
 export function PersonPage() {
   const params = useParams();
@@ -23,7 +24,7 @@ export function PersonPage() {
   );
 
   return (
-    <>
+    <div className="person-page-main">
       <PersonSection
         person={person.data}
         isError={person.isError}
@@ -44,6 +45,6 @@ export function PersonPage() {
         isError={starringSeries.isError}
         errorMessage={starringSeries.errorMsg}
       />
-    </>
+    </div>
   );
 }

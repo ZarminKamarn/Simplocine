@@ -12,3 +12,9 @@
 .navbar-link:hover {
   color: rgb(255, 127, 127);
 }
+
+@media screen and (max-width: 992px) {
+  .navbar-link {
+    width: min-content;
+  }
+}

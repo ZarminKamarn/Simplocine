@@ -6,6 +6,7 @@
   padding-bottom: 6px;
   border-bottom: 2px solid rgb(53, 54, 46);
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .details-page-main {

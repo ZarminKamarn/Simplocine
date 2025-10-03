@@ -24,7 +24,7 @@ export function SeasonSection({
           <ul className="casting-list">
             {data.seasons.map((season) => {
               return (
-                <li className="season-item">
+                <li className="season-item" key={season.id}>
                   <SeasonContent season={season} />
                 </li>
               );

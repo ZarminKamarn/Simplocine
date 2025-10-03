@@ -3,6 +3,8 @@
   flex-direction: row;
   gap: 28px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .person-info {
@@ -10,4 +12,5 @@
   flex-direction: column;
   gap: 16px;
   width: 100%;
+  padding: 0px 8px;
 }

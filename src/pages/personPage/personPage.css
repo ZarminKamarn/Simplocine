@@ -1,0 +1,5 @@
+.person-page-main {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
